@@ -34,7 +34,7 @@ describe QueryApi do
       it 'raises an error' do
         allow(http).to receive(:get_response).and_return(unsuccessful_response)
 
-        expect { subject.all_purchases }.to raise_error('HTTP response was not successful')
+        expect { subject.all_purchases }.to raise_error('HTTP response not successful')
       end
     end
 
