@@ -37,6 +37,16 @@
         1,
         null,
         1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/davidlawes/Projects/public_api_querier/spec/question_spec.rb": [
@@ -94,6 +104,6 @@
         null
       ]
     },
-    "timestamp": 1541860525
+    "timestamp": 1541860693
   }
 }
