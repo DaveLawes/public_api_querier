@@ -9,6 +9,8 @@ class QueryApi
   def all_purchases
     purchases_uri = URI('https://driftrock-dev-test.herokuapp.com/purchases')
     response = @http.get_response(purchases_uri)
+    data = JSON.parse(response.body)
+    data['data']
   end
 
 end

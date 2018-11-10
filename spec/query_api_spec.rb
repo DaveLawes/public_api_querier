@@ -7,13 +7,24 @@ describe QueryApi do
   subject { described_class.new(http) }
 
   describe '#all_purchases' do
-
     purchases_uri = URI('https://driftrock-dev-test.herokuapp.com/purchases')
+    purchases = File.read('./spec/test_data/all_purchases.json')
+
+    before do
+      allow(response).to receive(:body).and_return(purchases)
+    end
 
     it 'makes a get request to correct url' do
       expect(http).to receive(:get_response).with(purchases_uri)
 
       subject.all_purchases
+    end
+
+    it 'returns the body of the response in json format' do
+      http_body = JSON.parse(purchases)
+      expected_return = http_body['data']
+
+      expect(subject.all_purchases).to eq expected_return
     end
   end
 
