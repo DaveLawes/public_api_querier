@@ -10,6 +10,12 @@ describe Question do
 
       question = Question.new(query_api)
     end
+
+    it 'requests all users from query_api' do
+      expect(query_api).to receive(:all_users)
+
+      question = Question.new(query_api)
+    end
   end
 
 end
