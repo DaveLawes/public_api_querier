@@ -28,4 +28,10 @@ describe Question do
     end
   end
 
+  describe '#total_spend' do
+    it 'returns the total spend for the user email provided' do
+      expect(subject.total_spend('schimmel_quincy@ernser.io')).to eq 245.01
+    end
+  end
+
 end
