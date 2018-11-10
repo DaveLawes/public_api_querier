@@ -8,9 +8,23 @@ This is a command line Ruby app that queries a public api and returns answers to
 
 #### How to Install
 
+The application was built using Ruby 2.5.1 and this Ruby version is specified as part of the build.
+
+Fork or clone this repo to your local machine. Run `bundle install` to make sure all gemfiles (dependencies) are correctly installed.
+
 #### How to Test
 
+From the root of the project directory run `rspec` - this will run all feature and unit tests.
+
+Note: feature tests make calls to the API whereas the unit tests are isolated and do not make calls to the API.
+
 #### How to Run
+
+From the root of the project directory invoke the following commands in the command line:
+
+- To get an answer for the most sold question: `ruby app.rb most_sold`
+- To get an answer for the total spend question: `ruby app.rb total_spend [EMAIL]`
+- To get an answer for the most loyal question: `ruby app.rb most_loyal`
 
 ## Requirements
 
@@ -19,9 +33,9 @@ Extracted requirements:
 - Explain my thought process
 - Provide information about how to run and test my app
 - Write simple and readable code
-- App should be split across multiple files
+- Split the app across multiple files
 - Provide meaningful (passing) tests
-- Dealing with edge cases is a bonus
+- Dealing with edge cases are a bonus
 
 ## User Stories
 
@@ -47,6 +61,10 @@ Some identified edge cases:
 As a user
 So I get more information about the app
 I'd like to receive feedback if an unknown question is asked
+
+As a user
+So I get more information about the question result
+I'd like to receive feedback if the total_spend email isn't included in the data
 
 As a user
 So I get more information about the API
@@ -89,5 +107,6 @@ The following describes my steps when creating the solution:
 - Create domain model (having thought about what classes and architecture I want)
 - Setup my project (github repo, TravisCI, rubocop, simplecov)
 - Follow a red-green-refactor flow (starting with a feature test for my first user story)
+- If edge cases are identified when working: add these as features/user stories to be completed after all core user stories have been satisfied
 
 ## Areas for Improvement
