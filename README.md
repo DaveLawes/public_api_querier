@@ -4,6 +4,11 @@
 
 This is a command line Ruby app that queries a public api and returns answers to three hard-coded questions. 
 
+The app has been test-driven using RSpec and has 100% test coverage, no linter offences:
+
+<img src="/public/test_coverage.png">
+<img src="/public/linter.png">
+
 ## How to Use
 
 #### How to Install
