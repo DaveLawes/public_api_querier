@@ -34,4 +34,10 @@ describe Question do
     end
   end
 
+  describe '#most_loyal' do
+    it 'returns the email address of the most loyal customer' do
+      expect(subject.most_loyal).to eq 'travis_kshlerin@wunsch.net'
+    end
+  end
+
 end
