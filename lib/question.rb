@@ -16,4 +16,20 @@ class Question
     sorted[0][0]
   end
 
+  def total_spend(email)
+    user_id = ''
+    @all_users.each do |user|
+      if user['email'] === email
+        user_id = user['id']
+      end
+    end
+
+    total_spend = 0
+    @all_purchases.each do |item|
+      total_spend += item['spend'].to_f if item['user_id'] == user_id
+    end
+
+    total_spend
+  end
+
 end
