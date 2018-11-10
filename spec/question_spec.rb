@@ -2,7 +2,10 @@ require 'question'
 
 describe Question do
 
-  let(:query_api) { double :query_api_double, all_purchases: '', all_users: '' }
+  purchases = JSON.parse(File.read('./spec/test_data/all_purchases.json'))["data"]
+  users = JSON.parse(File.read('./spec/test_data/all_users.json'))["data"]
+
+  let(:query_api) { double :query_api_double, all_purchases: purchases, all_users: users }
   subject { described_class.new(query_api) }
 
   describe '#init' do
