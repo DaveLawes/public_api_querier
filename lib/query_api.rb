@@ -22,7 +22,7 @@ class QueryApi
   def get_response_body(url)
     uri = URI(url)
     response = @http.get_response(uri)
-    raise('HTTP response not successful') unless response.is_a?(Net::HTTPSuccess)
+    raise('HTTP response not a success') unless response.is_a?(Net::HTTPSuccess)
 
     JSON.parse(response.body)
   end
