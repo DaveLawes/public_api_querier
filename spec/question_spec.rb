@@ -8,13 +8,13 @@ describe Question do
     it 'requests all purchases from query_api' do
       expect(query_api).to receive(:all_purchases)
 
-      question = Question.new(query_api)
+      Question.new(query_api)
     end
 
     it 'requests all users from query_api' do
       expect(query_api).to receive(:all_users)
 
-      question = Question.new(query_api)
+      Question.new(query_api)
     end
   end
 
