@@ -17,6 +17,12 @@ class Question
     calculate_total_spend(user_id)
   end
 
+  def most_loyal
+    ids = map_purchases_by_property('user_id')
+    user_id = find_most_common(ids)
+    find_by('id', user_id, 'email')
+  end
+
   private
 
   def map_purchases_by_property(property)
