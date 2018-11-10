@@ -1,3 +1,5 @@
+require 'query_api'
+
 class Question
 
   def initialize(query_api = QueryApi.new)
