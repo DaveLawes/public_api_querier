@@ -1,4 +1,4 @@
-require 'query_api'
+require './lib/query_api'
 
 class Question
 

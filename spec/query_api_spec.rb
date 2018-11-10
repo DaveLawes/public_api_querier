@@ -28,4 +28,19 @@ describe QueryApi do
     end
   end
 
+  describe '#all_users' do
+    users_uri = URI('https://driftrock-dev-test.herokuapp.com/users')
+    users = File.read('./spec/test_data/all_users.json')
+
+    before do
+      allow(response).to receive(:body).and_return(users)
+    end
+
+    it 'makes a get request to the correct url' do
+      expect(http).to receive(:get_response).with(users_uri)
+
+      subject.all_users
+    end
+  end
+
 end
