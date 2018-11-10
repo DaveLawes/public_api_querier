@@ -20,4 +20,9 @@ describe 'app.rb' do
     expect(unknown_question).to eq "Sorry, unknown question\n"
   end
 
+  it 'returns a message when email is not provided for total_spend' do
+    no_email = %x(ruby app.rb total_spend)
+    expect(no_email).to eq "Please provide an email\n"
+  end
+
 end
