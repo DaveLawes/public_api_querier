@@ -67,8 +67,8 @@ So I get more information about the question result
 I'd like to receive feedback if the total_spend email isn't included in the data
 
 As a user
-So I get more information about the API
-I'd like to receive feedback if there is an error with the API status
+So I get more information from the app
+I'd like to receive feedback if there is an error with the HTTP response
 ```
 
 ## Domain Model
