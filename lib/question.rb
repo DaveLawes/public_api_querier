@@ -38,11 +38,11 @@ class Question
   end
 
   def find_by(property, value, return_property)
-    user_id = nil
+    found = nil
     @all_users.each do |user|
-      user_id = user[return_property] if user[property] === value
+      found = user[return_property] if user[property] === value
     end
-    user_id
+    found
   end
 
   def calculate_total_spend(user_id)
