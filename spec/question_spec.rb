@@ -29,9 +29,18 @@ describe Question do
   end
 
   describe '#total_spend' do
-    it 'returns the total spend for the user email provided' do
-      expect(subject.total_spend('schimmel_quincy@ernser.io')).to eq 245.01
+    context 'given email exists within users data' do
+      it 'returns the total spend for the user email provided' do
+        expect(subject.total_spend('schimmel_quincy@ernser.io')).to eq 245.01
+      end
     end
+
+    context 'given email does not exist within users data' do
+      it 'raises an error to alert the user' do
+        expect { subject.total_spend('dave@test.co') }.to raise_error('Email not included in data')
+      end
+    end
+
   end
 
   describe '#most_loyal' do
