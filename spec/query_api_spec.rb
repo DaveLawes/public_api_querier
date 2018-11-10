@@ -53,6 +53,23 @@ describe QueryApi do
 
       subject.all_users
     end
+
+    context 'given HTTP response is successful' do
+      it 'returns the body of the response in json format' do
+        http_body = JSON.parse(users)
+        expected_return = http_body['data']
+
+        expect(subject.all_users).to eq expected_return
+      end
+    end
+
+    context 'given the HTTP response is not successful' do
+      it 'raises an error' do
+        allow(http).to receive(:get_response).and_return(unsuccessful_response)
+
+        expect { subject.all_users }.to raise_error('HTTP response not successful')
+      end
+    end
   end
 
 end
