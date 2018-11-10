@@ -22,7 +22,7 @@ describe 'app.rb' do
 
   it 'returns a message when email is not provided for total_spend' do
     no_email = %x(ruby app.rb total_spend)
-    expect(no_email).to eq "Please provide an email\n"
+    expect(no_email).to eq "Email required\n"
   end
 
 end
