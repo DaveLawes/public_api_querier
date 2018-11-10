@@ -14,6 +14,8 @@ class Question
 
   def total_spend(email)
     user_id = find_by('email', email, 'id')
+    raise('Email not included in data') if user_id.nil?
+
     calculate_total_spend(user_id)
   end
 
@@ -36,9 +38,11 @@ class Question
   end
 
   def find_by(property, value, return_property)
+    user_id = nil
     @all_users.each do |user|
-      return user[return_property] if user[property] === value
+      user_id = user[return_property] if user[property] === value
     end
+    user_id
   end
 
   def calculate_total_spend(user_id)
