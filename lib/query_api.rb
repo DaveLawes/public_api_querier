@@ -8,17 +8,21 @@ class QueryApi
   end
 
   def all_purchases
-    purchases_uri = URI('https://driftrock-dev-test.herokuapp.com/purchases')
-    response = @http.get_response(purchases_uri)
-    data = JSON.parse(response.body)
-    data['data']
+    body = getResponseBody('https://driftrock-dev-test.herokuapp.com/purchases')
+    body['data']
   end
 
   def all_users
-    users_uri = URI('https://driftrock-dev-test.herokuapp.com/users')
-    response = @http.get_response(users_uri)
-    data = JSON.parse(response.body)
-    data['data']
+    body = getResponseBody('https://driftrock-dev-test.herokuapp.com/users')
+    body['data']
+  end
+
+  private
+
+  def getResponseBody(url)
+    uri = URI(url)
+    response = @http.get_response(uri)
+    JSON.parse(response.body)
   end
 
 end
