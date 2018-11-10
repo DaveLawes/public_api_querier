@@ -1,5 +1,7 @@
 # public_api_querier
 
+[![Build Status](https://travis-ci.org/DaveLawes/public_api_querier.svg?branch=master)](https://travis-ci.org/DaveLawes/public_api_querier)
+
 This is a command line Ruby app that queries a public api and returns answers to three hard-coded questions. 
 
 ## How to Use
