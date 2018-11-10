@@ -6,5 +6,5 @@ case ARGV[0]
 when 'most_sold'
   puts question.most_sold
 else
-  puts 'not a valid selection'
+  puts 'Sorry, unknown question'
 end

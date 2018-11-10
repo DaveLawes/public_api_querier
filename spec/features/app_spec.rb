@@ -5,4 +5,9 @@ describe 'app.rb' do
     expect(most_sold).to eq "Heavy Duty Concrete Watch\n"
   end
 
+  it 'returns a message when unknown question is asked' do
+    unknown_question = %x(ruby app.rb xxx)
+    expect(unknown_question).to eq "Sorry, unknown question\n"
+  end
+
 end
