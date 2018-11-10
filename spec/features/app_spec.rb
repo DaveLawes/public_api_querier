@@ -10,6 +10,11 @@ describe 'app.rb' do
     expect(total_spend).to eq "245.01\n"
   end
 
+  it 'returns the most loyal customer' do
+    most_loyal = %x(ruby app.rb most_loyal)
+    expect(most_loyal).to eq "travis_kshlerin@wunsch.net\n"
+  end
+
   it 'returns a message when unknown question is asked' do
     unknown_question = %x(ruby app.rb xxx)
     expect(unknown_question).to eq "Sorry, unknown question\n"
