@@ -34,7 +34,7 @@ class Question
   def find_most_common(array)
     mapped = array.each_with_object(Hash.new(0)) { |k, v| v[k] += 1 }
     sorted = mapped.sort_by { |_, v| v }.reverse
-    sorted[0][0]
+    sorted[0][0] 
   end
 
   def find_by(property, value, return_property)

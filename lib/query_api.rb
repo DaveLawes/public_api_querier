@@ -17,6 +17,10 @@ class QueryApi
     body['data']
   end
 
+  # I didn't DRY the above functions out further because different response
+  # bodies have a different data structure. E.g. for [api]/status I would want
+  # to return body['status']
+
   private
 
   def get_response_body(url)
