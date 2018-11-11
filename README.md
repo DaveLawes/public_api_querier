@@ -116,6 +116,7 @@ The QueryApi class controls the HTTP requests and responses. For the current app
 
 The following describes my steps when creating the solution:
 - Read the requirements and ensure I have understood them
+- Use Insomnia to check API and collect test data
 - Create user stories for core requirements and edge cases
 - Create a domain model (having thought about what classes and architecture I want)
 - Setup my project (github repo, TravisCI, rubocop, simplecov)
@@ -125,6 +126,8 @@ The following describes my steps when creating the solution:
 
 ## Areas for Improvement
 
-1. The app does not look at the API status, it assumes that the API status is always ok. To improve the quality of the results it would be good to add functionality to check the status before attempting to GET purchases/users. If the API status is not ok, then this information could be fed back to the user.
+1. The app does not look at the API status, it assumes that the API status is always ok. It would be good to add functionality to check the status before attempting to GET purchases/users. If the API status is not ok, then this information could be fed back to the user.
 2. The app raises an error if the HTTP response is not successful. It does this by checking the class of the HTTP response. If the response class is anything other than 'Net::HTTPSuccess' then it raises an error. However, potentially valid responses could exist for redirections.
 3. I've assumed that the 'users' data set will contain unique emails and ids only - the app isn't written to check these kinds of edge cases.
+4. Currently app.rb is a 'one shot' application - each time a question is asked the API is queried. However, how often does the API update? If it updates infrequently (~30mins) then maybe a more efficient approach would be to change app.rb (and also the user interaction with the app) to query the API once for the entire set of questions.
+5. I use array iterators to search through my data sets, but maybe a more efficient searching algorithm could be employed (maybe breaking from the iteration if a match is found, for example). For the current size of the data set, I don't think this has an impact on performance, but maybe for larger data sets this would be a consideration.
