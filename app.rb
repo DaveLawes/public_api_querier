@@ -10,6 +10,10 @@ class App
     @question.most_sold
   end
 
+  def most_loyal
+    @question.most_loyal
+  end
+
 end
 
 # app = App.new

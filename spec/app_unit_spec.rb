@@ -11,8 +11,12 @@ describe App do
 
     subject.most_sold
   end
-  # expect(question_double).to receive(most_sold)
-  # call most_sold on question
-  # app('most_sold')
+
+  it 'Expect most_loyal to be invoked on Question' do
+    expect(question_double).to receive(:most_loyal)
+
+    subject.most_loyal
+  end
+
 
 end
