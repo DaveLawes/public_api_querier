@@ -6,6 +6,21 @@ class App
     @question = question
   end
 
+  def ask_question(question, email = nil)
+    case question
+    when 'most_sold'
+      most_sold
+    when 'total_spend'
+      total_spend(email)
+    when 'most_loyal'
+      most_loyal
+    else
+      raise('Unknown question')
+    end
+  end
+
+  private
+
   def most_sold
     @question.most_sold
   end
