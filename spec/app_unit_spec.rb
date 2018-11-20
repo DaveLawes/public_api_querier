@@ -12,6 +12,12 @@ describe App do
     subject.most_sold
   end
 
+  it 'Expect total_spend to be invoked on Question with 1 argument' do
+    expect(question_double).to receive(:total_spend).with('example@email.com')
+
+    subject.total_spend('example@email.com')
+  end
+
   it 'Expect most_loyal to be invoked on Question' do
     expect(question_double).to receive(:most_loyal)
 

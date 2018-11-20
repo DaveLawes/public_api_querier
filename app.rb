@@ -14,6 +14,10 @@ class App
     @question.most_loyal
   end
 
+  def total_spend(email)
+    @question.total_spend(email)
+  end
+
 end
 
 # app = App.new
