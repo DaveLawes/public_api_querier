@@ -6,7 +6,14 @@ class App
     @question = question
   end
 
+  def most_sold
+    @question.most_sold
+  end
+
 end
+
+# app = App.new
+# app.ask_question(ARGV[0], ARGV[1])
 
 question = Question.new
 
