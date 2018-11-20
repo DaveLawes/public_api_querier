@@ -37,22 +37,11 @@ class App
 
 end
 
-# app = App.new
-# app.ask_question(ARGV[0], ARGV[1])
-
-question = Question.new
-
-case ARGV[0]
-when 'most_sold'
-  puts question.most_sold
-when 'total_spend'
-  ARGV[1].nil? ? (puts 'Email required') : (puts question.total_spend(ARGV[1]))
-when 'most_loyal'
-  puts question.most_loyal
-else
-  puts 'Sorry, unknown question'
+if __FILE__ == $0
+  begin
+    app = App.new
+    puts app.ask_question(ARGV[0], ARGV[1])
+  rescue => error
+    puts error
+  end
 end
-
-# if __file__ == $0
-#   App.run
-# end

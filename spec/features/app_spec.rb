@@ -17,7 +17,7 @@ describe 'app.rb' do
 
   it 'returns a message when unknown question is asked' do
     unknown_question = %x(ruby app.rb xxx)
-    expect(unknown_question).to eq "Sorry, unknown question\n"
+    expect(unknown_question).to eq "Unknown question\n"
   end
 
   it 'returns a message when email is not provided for total_spend' do
