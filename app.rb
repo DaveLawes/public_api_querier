@@ -7,6 +7,8 @@ class App
   end
 
   def ask_question(question, email = nil)
+    # @question.checkAPI
+
     case question
     when 'most_sold'
       most_sold
