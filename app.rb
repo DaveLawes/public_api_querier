@@ -15,6 +15,8 @@ class App
   end
 
   def total_spend(email)
+    raise('Email required') if email.nil?
+
     @question.total_spend(email)
   end
 

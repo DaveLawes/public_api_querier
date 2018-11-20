@@ -24,5 +24,10 @@ describe App do
     subject.most_loyal
   end
 
+  # edge cases
+  # no email provided to total spend
+  it 'Expect error to be raised in no email provided for total_spend' do
+    expect { subject.total_spend(nil) }.to raise_error('Email required')
+  end
 
 end
